@@ -5,9 +5,9 @@ using namespace std;
 int main()
 {
     int compras, atraso;
-    int pontCompras;
+    int pontCompras, inadiplencia, pontForma;
     double ticket;
-    char forma;
+    string forma;
 
     //cabeçalho
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
@@ -31,6 +31,19 @@ int main()
     else {pontCompras = 60;}
 
     cout << endl << "Score de volume de compras = " << pontCompras << " pontos" << endl;
+
+    //calculo do score de inadiplencia e pagamento
+    if (atraso > 1 || compras == 0){inadiplencia = 0;}
+    else if(compras > 0){
+        if (atraso == 1){inadiplencia = 15;}
+        else if(atraso == 0){inadiplencia = 30;}
+    }
+
+    if (forma == "D"){pontForma = 5;}
+    else if (forma == "B" || forma == "C"){pontForma = 10;}
+
+    cout << "Score de inadimplencia = " << inadiplencia << " pontos" << endl;
+    cout << "Score de forma de pagamento = " << pontForma << " pontos" << endl;
 
     return 0;
 }
