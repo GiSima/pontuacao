@@ -6,6 +6,7 @@ int main()
 {
     int compras, atraso;
     int pontCompras, inadiplencia, pontForma;
+    int pontFinal;
     double ticket;
     string forma;
 
@@ -44,6 +45,16 @@ int main()
 
     cout << "Score de inadimplencia = " << inadiplencia << " pontos" << endl;
     cout << "Score de forma de pagamento = " << pontForma << " pontos" << endl;
+
+    //pontuação final
+    pontFinal = pontCompras + inadiplencia + pontForma;
+
+    cout << endl << "Classificacao final = ";
+
+    if (pontFinal <= 25){cout << "CLIENTE BRONZE";}
+    else if (pontFinal <= 75){cout << "CLIENTE PRATA";}
+    else {cout << "CLIENTE OURO";}
+    cout << endl;
 
     return 0;
 }
